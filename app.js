@@ -100,7 +100,8 @@ function onContainerListClick(event) {
       event.preventDefault();
     
   if (!event.target.classList.contains('gallery__image')) {
-    return console.log(event.target.classList.contains('gallery__image'));;
+    return;
+    // return console.log(event.target.classList.contains('gallery__image'));;
   }
   modalBoxRef.classList.add('is-open');
     const { dataset, alt } = event.target;
