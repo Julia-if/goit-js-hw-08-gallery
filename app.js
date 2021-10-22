@@ -97,16 +97,21 @@ const btnCloseModalbox = document.querySelector('.lightbox__button');
 
 
 function onContainerListClick(event) {
-    event.preventDefault();
-    modalBoxRef.classList.add('is-open');
+      event.preventDefault();
+    
+  if (!event.target.classList.contains('gallery__image')) {
+    return console.log(event.target.classList.contains('gallery__image'));;
+  }
+  modalBoxRef.classList.add('is-open');
     const { dataset, alt } = event.target;
-    myFunction(dataset.source, alt);
-};
+  myFunction(dataset.source, alt);
+  };
 
 btnCloseModalbox.addEventListener('click',onCloseModalbtn);
 function onCloseModalbtn() {
     modalBoxRef.classList.remove('is-open');
-    myFunction("", "");
+  myFunction("", "");
+  
 }
 
 
